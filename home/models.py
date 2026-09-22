@@ -7,7 +7,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    stoke = models.PositiveIntegerField(default=0)
+    stock = models.PositiveIntegerField(default=0)
     image_url = models.URLField(blank=True)
     is_available = models.BooleanField(default=True)
     

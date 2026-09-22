@@ -6,7 +6,22 @@
     <title>My Store</title>
   </head>
   <body>
-    <h1>Welcome to My Store</h1>
-    <p>Our products will appear here.</p>
+    <h1>My Store</h1>
+
+    {% for product in products %}
+    <article>
+      {% if product.image_url %}
+      <img src="{{ product.image_url }}" alt="{{ product.name }}" width="200" />
+      {% endif %}
+
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <strong>${{ product.price }}</strong>
+      <p>Stock: {{ product.stock }}</p>
+    </article>
+    <hr />
+    {% empty %}
+    <p>No products are available.</p>
+    {% endfor %}
   </body>
 </html>
